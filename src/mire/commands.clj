@@ -115,7 +115,14 @@
                "detect" detect
                "look" look
                "say" say
-               "help" help})
+               "help" help
+               "n" (fn [] (move :north))
+               "s" (fn [] (move :south))
+               "w" (fn [] (move :west))
+               "e" (fn [] (move :east))
+               "l" look
+               "get" grab
+               })
 
 ;; Command handling
 
@@ -126,4 +133,4 @@
          (apply (commands command) args))
        (catch Exception e
          (.printStackTrace e *err*)
-         "You can't do that!")))
+         "You can't do that, try typing help!")))
